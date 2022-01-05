@@ -18,7 +18,7 @@ export interface VBody {
   };
 }
 
-export interface Label {}
+export type Label = {};
 
 // TODO: ↑↑↑↑ Import these in the future.
 
@@ -123,9 +123,7 @@ export interface EdgeType {
    *
    * @returns Cartesian coordinates of the intersections between the borders of the nodes and the edge.
    */
-  findBorderPositions(
-    ctx: CanvasRenderingContext2D
-  ): {
+  findBorderPositions(ctx: CanvasRenderingContext2D): {
     from: Point;
     to: Point;
   };

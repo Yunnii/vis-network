@@ -19,7 +19,7 @@ function traverseCO(root: any, rootPath: string[] = []): void {
     if (typeof value === "object" && value !== null && !Array.isArray(value)) {
       traverseCO(value, path);
     } else {
-      it(path.join("."), function(): void {
+      it(path.join("."), function (): void {
         if (Array.isArray(value) && typeof value[0] === "number") {
           expect(
             value,
@@ -60,11 +60,9 @@ function traverseCO(root: any, rootPath: string[] = []): void {
             "There has to be an initial color after the color keyword."
           ).to.to.have.lengthOf(2);
 
-          expect(
-            value,
-            "All values have to be color strings."
-          ).to.satisfy((value: unknown[]): boolean =>
-            value.every((v): boolean => typeof v === "string")
+          expect(value, "All values have to be color strings.").to.satisfy(
+            (value: unknown[]): boolean =>
+              value.every((v): boolean => typeof v === "string")
           );
         } else if (Array.isArray(value) && typeof value[0] === "string") {
           expect(
@@ -88,6 +86,6 @@ function traverseCO(root: any, rootPath: string[] = []): void {
   });
 }
 
-describe("Configure Options", function(): void {
+describe("Configure Options", function (): void {
   traverseCO(configureOptions);
 });
